@@ -3,6 +3,24 @@ Self-Driving Car Engineer Nanodegree Program
 
 ---
 
+The basic elements of a PID controller are :
+
+* P - Proportional
+* I - Integral
+* D - Derivative
+
+For this project I had to do manually tune the parameters to keep the car on track. The PID controller uses the Cross Track Error (CTE) from the system.
+
+#### Parameter Kp
+This value is directly proportional to the streeing angle of the car. If I pass a higher value, the car is taking sharper turns. If I pass a lower value car is going out of the track.
+
+#### Parameter Ki
+This parameter eliminates the residual error by adding a historic cumulative value of the error. After adding this value, I observed stabilization while the car is going.
+
+#### Parameter Kd
+This parameter represents the amount of correction that needs to be applied. This parameter helped the oscillation reduction effect of the Kp parameter. This parameter was tuned for each Kp value. This way made sure the car will not oscillate for errors.
+
+
 ## Dependencies
 
 * cmake >= 3.5
